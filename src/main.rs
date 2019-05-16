@@ -20,7 +20,7 @@ fn main() {
 
         while let Some(command) = commands.next() {
             let mut parts = command.trim().split_whitespace();
-            let command = parts.next().unwrap();
+            let command = parts.next().unwrap_or("");
             let args = parts;
 
             match command {
@@ -34,6 +34,7 @@ fn main() {
                     previous_command = None;
                 }
 
+                "" => continue,
                 "exit" => return,
 
                 command => {
