@@ -7,6 +7,8 @@ use std::process::{Child, Command, Stdio};
 
 fn main() {
     loop {
+        let path = env::current_dir().unwrap();
+        println!("{}", path.to_str().unwrap());
         print!("> ");
         stdout().flush().unwrap();
 
