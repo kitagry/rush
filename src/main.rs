@@ -1,14 +1,12 @@
 use std::env;
-use std::io::stdin;
-use std::io::stdout;
-use std::io::Write;
+use std::io::{stdin, stdout, Write};
 use std::path::Path;
 use std::process::{Child, Command, Stdio};
 
 fn main() {
     loop {
         let path = env::current_dir().unwrap();
-        println!("{}", path.to_str().unwrap());
+        println!("\n{}", path.to_str().unwrap());
         print!("> ");
         stdout().flush().unwrap();
 
